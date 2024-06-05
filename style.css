@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ----- FONTS ----- */
+    font-size: 62.5%;
+    
+    --ff-body: 'Inter', sans-serif;
+
+    /* ----- COLORS ----- */
+    --bg-fundo: #121214;
+    --fc-white: #FFFFFF;
+    --fc-paragraph: #A1A1AA;
+    --bg-card: #2A2634;
+    --bg-gradient: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    --bg-border: #443E54;
+}
+
+ul {
+    list-style: none;
+}
+
+body * {
+    font-family: var(--ff-body);
+    line-height: 160%;
+}
+
+body {
+    font-size: 1.6rem;
+
+    background-image: url(./assets/Fundo.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: var(--bg-fundo);
+}
+
+header {
+    margin-top: 3.2rem;
+    height: calc(12rem + 3.2rem);
+}
+
+header div {
+    width: 12rem;
+    margin: auto;
+
+    background-image: var(--bg-gradient);
+
+    border-radius: 50%;
+
+    display: flex;
+    padding: .4rem;
+
+    transition: transform .3s;
+
+    animation: fromTop .7s .3s backwards;
+}
+
+header div:hover {
+    transform: scale(1.1);
+}
+
+header img {
+    width: 100%;
+    border-radius: 50%;
+
+}
+
+main {
+    max-width: 58rem;
+    width: 90%;
+    margin: 3.2rem auto;
+
+    display: grid;
+    gap: 2.4rem;
+}
+
+main section {
+    animation: fromBottom .7s backwards;
+}
+
+main section:nth-child(1) {
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: .3s;
+}
+
+main section:nth-child(3) {
+    animation-delay: .6s;
+}
+
+section {
+    color: var(--fc-white);
+
+    background-image: var(--bg-gradient);
+    padding-top: .4rem;
+    border-radius: 1rem;
+}
+
+section div {
+    background-color: var(--bg-card);
+
+    padding: 3.2rem;
+    padding-top: 2.4rem;
+
+    border-radius: .8rem;
+}
+
+section h2 {
+    letter-spacing: -0.47px;
+}
+
+section p {
+    letter-spacing: -0.18px;
+    color: var(--fc-paragraph);
+}
+
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;  
+
+    margin-top: 2.4rem; 
+}
+
+section ul li {
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
+.games-list img {
+    width: 9rem;
+    border-radius: .8rem;
+}
+
+.channel-list img {
+    width: 7rem;
+    border-radius: 50%;
+    border: 1px solid var(--bg-border);
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
